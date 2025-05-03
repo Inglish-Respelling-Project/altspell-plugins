@@ -36,33 +36,28 @@ class PluginBase(ABC):
     @abstractmethod
     def name(self) -> str:
         """
-        Returns:
-            str: Identifier for the spelling system. Used in Altspell API calls.
+        Identifier for the spelling system. Used in Altspell API calls.
         """
 
     @property
     @abstractmethod
     def pretty_name(self) -> str:
         """
-        Returns:
-            str: Human-readable name for the spelling system. Intended for frontend use.
+        Human-readable name for the spelling system. Intended for frontend use.
         """
 
     @property
     def facts(self) -> str | None:
         """
-        Concrete subclasses do not need to implement this method. It is optional.
+        JSON string for miscellaneous structured info about the spelling system. Optional.
 
-        Returns:
-            str: JSON string for miscellaneous structured info about the spelling system.
-
-            E.g:
-                .. code-block:: json
-                {
-                    "author": "Christian Siefkes",
-                    "description": "A Simple Phonetic Respelling for the English Language",
-                    "reference": "https://www.lytspel.org/rules"
-                }
+        E.g:
+            .. code-block:: json
+            {
+                "author": "Christian Siefkes",
+                "description": "A Simple Phonetic Respelling for the English Language",
+                "reference": "https://www.lytspel.org/rules"
+            }
         """
         return None
 
