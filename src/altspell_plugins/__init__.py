@@ -49,7 +49,7 @@ class PluginBase(ABC):
     def translate_to_traditional_spelling(self, respelled_text: str) -> str:
         """
         Thread-safe method for translating from alternative English spelling to traditional
-        English spelling. All concrete subclasses must implement or a NotImplementedError.
+        English spelling. All concrete subclasses must implement or raise a NotImplementedError.
 
         Args:
             respelled_text (str): Text written in the alternative English spelling.
